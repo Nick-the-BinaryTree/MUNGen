@@ -2124,7 +2124,6 @@ function ComGen () {
 				var num_countries = 10;
 			};
 			var result = getTopic ();
-			var takenCountries = list ([]);
 			for (var _ = 0; _ < num_countries; _++) {
 				takenCountries.append (getCountry ());
 			}
@@ -2168,7 +2167,14 @@ window.onload = function(){
         
         removeCountries();
         
-        addCountries(result.countries);
+        if(numCountries < 0 || numCountries > 240){
+            var countryElem = document.createElement("p");
+            countryElem.innerHTML = "Not a valid number of countries."
+            countriesDiv.appendChild(countryElem);
+        }
+        else{
+            addCountries(result.countries);
+        }
         return false;
     }
     

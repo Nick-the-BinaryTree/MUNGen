@@ -90,19 +90,19 @@ committees = [
 
 ]
 
-takenCountries = []
+taken = set()
 
 def getCountry():
-    if len(takenCountries) >= len(countries):
+    if len(taken) >= len(countries):
         return "There are no more countries."
-    elif len(takenCountries) >= len(countries)/2:
+    elif len(taken) >= len(countries)/2:
         for country in countries:
-            if country not in takenCountries:
+            if country not in taken:
                 return country
     else:
         while True:
             country = countries[random.randint(0, len(countries)-1)]
-            if country not in takenCountries:
+            if country not in taken:
                 return country
 
 def getTopic():
@@ -112,13 +112,12 @@ def getTopic():
     topic = committees[comNum]["topics"][topicNum]
     return {"committee" : committee, "topic" : topic}
 
-def genCommittee(num_countries = 10):
+def genCommittee(num_countries = 1000):
     result = getTopic()
-    takenCountries = []
     for _ in range(num_countries):
-        takenCountries.append(getCountry())
+        taken.add(getCountry())
 
-    result["countries"] = takenCountries
+    result["countries"] = taken
     return result
 
 print(genCommittee())
