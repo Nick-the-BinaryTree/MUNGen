@@ -8,6 +8,8 @@
     <meta name="description" content="Model UN committee generator.">
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
       
   </head>
   <body>
@@ -16,10 +18,11 @@
         <input id="numCountries" type="number" value="10">
         <input id="submit" type="submit" value="Go">
     </form>
-    <h2 id = "committee" class = "result">Com</h2>
-    <h2 id = "topic" class = "result">Topic</h2>
-    <h3 id = "countriesHeader" class = "result">Countries:</h2>
+    <div id="results">
+        <h2 id = "committee" class = "startHide">Com</h2>
+    <h2 id = "topic" class = "startHide">Topic</h2>
     <div id = "countries"></div>
+    </div>
     <script src="ComGen.js"></script>
   </body>
 </html>
