@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MUN Generator</title>
+    <meta name="author" content="Nicholas Hartunian">
+    <meta name="description" content="Model UN committee generator.">
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="style.css" type="text/css">
+      
+  </head>
+  <body>
+    <h1>Model UN Committee Generator</h1>
+    <form id = "settings">
+        <input id="numCountries" type="number" value="10">
+        <input id="submit" type="submit" value="Go">
+    </form>
+    <h2 id = "committee" class = "result">Com</h2>
+    <h2 id = "topic" class = "result">Topic</h2>
+    <h3 id = "countriesHeader" class = "result">Countries:</h2>
+    <div id = "countries"></div>
+    <script src="ComGen.js"></script>
+  </body>
+</html>
